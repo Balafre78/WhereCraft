@@ -70,6 +70,20 @@ bot.on('message', function (message) {
     }
  })
 
+bot.on('message', function (message) {
+    if (message.content === '!avatar') {
+        const membre = message.mentions.users.first() || message.author;
+	    
+	var embed = new Discord.RichEmbed()
+ 		.setTitle(`Avatare de **${membre.username}**`)
+    		.setDescription(`[Télécharger](${membre.displayAvatarURL})`)
+    		.setImage(membre.displayAvatarURL)
+
+    	message.channel.send(embed)
+    	message.delete().catch(O_o=>{});
+    }
+ })
+
 
 bot.on('message', function (message) {
     if (message.content === '!numberplayer') {
