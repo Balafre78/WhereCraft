@@ -120,6 +120,19 @@ else if (message.content === '!saltbal') {
 	message.channel.send('Salt de Balafre78 détecté')
         message.channel.send('https://cdn.discordapp.com/attachments/541759242580000768/586642531677110275/Salt-bae_Bala.png')
     }
+	
+else if (message.content === '!avatar') {
+	message.channel.bulkDelete(parseInt(1))
+	const membre = message.mentions.users.first() || message.author;
+
+    	var embed = new Discord.RichEmbed()
+    		.setTitle(`Avatare de **${membre.username}**`)
+    		.setDescription(`[Télécharger](${membre.displayAvatarURL})`)
+    		.setImage(membre.displayAvatarURL)
+
+    	message.channel.send(embed)
+    }
+
 
 
 else if (message.content === '!saltnitro') {
